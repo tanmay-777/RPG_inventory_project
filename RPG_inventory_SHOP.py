@@ -1,3 +1,4 @@
+import time
 inventory = []
 player_gold = 100
 
@@ -6,7 +7,6 @@ potions = {
     'Mana Elixir' : 40, 
     'Greater Healing Potion' : 50,
 }
-
 prompt = "Please Enter the specified key to browse the shop or exit it\n"
 prompt += "[1] View Shop, [2] Buy Item, [3] View Inventory, [4] Exit\n"
 prompt_inshop = "[2] Buy Item, [4] Exit\n"
@@ -15,6 +15,7 @@ game_loop = True
 
 
 while game_loop:
+    time.sleep(0.8)
     player_input = input(prompt)
     if player_input == '1':
         print("Items and their Price (In gold)\n")
@@ -42,10 +43,12 @@ while game_loop:
         if player_input == '3':
             for item in inventory:
                 print(f'You currently have {item}\n')
+            time.sleep(0.8)
             print(f'Remaning gold balance: {player_gold}')
     elif player_input == '3':
         for item in inventory:
             print(f'You currently have {item}\n')
+        time.sleep(0.8)
         print(f'Remaning gold balance: {player_gold}')
     elif player_input == '4':
         game_loop = False
